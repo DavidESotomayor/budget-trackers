@@ -1,5 +1,9 @@
 let db;
 
+if (!window.indexedDB) {
+    console.log("Your browser doesn't support a stable version of IndexedDB.  Offline Mode will not be supported.");
+}
+
 const request = indexedDB.open('budget', 1);
 
 request.onupgradeneeded = e => {

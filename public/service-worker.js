@@ -1,17 +1,15 @@
-const CACHE_NAME = 'budget-cache-v1';
+const CACHE_NAME = 'static-cache-v1';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
 const FILES_TO_CACHE = [
   '/',
-  './icons/icon-192x192.png',
-  './icons/icon-512x512.png',
-  'index.html',
-  'index.js',
-  'style.css',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/index.html',
+  '/index.js',
+  '/style.css',
   '/manifest.webmanifest',
-  'db.js',
-  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-  'https://cdn.jsdeliver.net/npm/chart.js@2.8.0'
+  '/db.js'
 ]
 
 
@@ -63,10 +61,14 @@ self.addEventListener("fetch", event => {
   }
 
   event.respondWith(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.match(event.request).then(response => {
-        return response || fetch(event.request);
-      });
+    fetch(event.request).catch(function() {
+      return caches.match(evt.request).then(function (response) {
+        if (response) {
+          return response;
+        } else if (evt.request.headers.get("accept").includes("text/html")) {
+          return caches.match("/");
+        }
     })
-  );
+    })
+  )
 });

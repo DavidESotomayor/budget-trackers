@@ -48,7 +48,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js').then(response => {
-          console.log('Service Worker file located!', response);
+          console.log('Service Worker file located!', response.scope);
         })
       })
     }
