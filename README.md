@@ -1,4 +1,4 @@
-# budget-trackers <p style="float: right;"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a></p>
+# Budget Tracker <p style="float: right;"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a></p>
 ## Description
 This application houses the **budget_tracker** application which tracks your budget, including your deposits and expenses using indexedDB as well as a [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API).  This allows the functionality of the application to persist online as well as offline.
 This repository was created using [Node](https://nodejs.org/en/), [Express](https://expressjs.com/), [Mongo_DB](https://www.mongodb.com/), [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), and the npm packages: [Mongoose](https://www.npmjs.com/package/mongoose), [Morgan](https://www.npmjs.com/package/morgan), [Compression](https://www.npmjs.com/package/compression), and [Lite-Server](https://www.npmjs.com/package/lite-server).  It is hosted on [Heroku](https://www.heroku.com). 
